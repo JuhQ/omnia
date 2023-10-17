@@ -1,0 +1,75 @@
+html {
+    font-size: 48px;
+}
+
+
+h1 {
+    background: darkorange;
+    color: white;
+    margin: 20px 10px 5px 1px;
+    padding: 20px;
+    padding-bottom: 40px;
+    margin-right: 175px;
+}
+
+div {
+    background-color: #56a52a;
+    padding: 6px;
+    margin: 2px;
+    font-size: 1.5rem;
+}
+
+p {
+    background-color: rgb(0, 4, 255);
+}
+
+
+div.div3 {
+    color: #ffffff;
+    font-size: 2.2rem;
+}
+
+.color-orange {
+    color: orange;
+}
+
+.color-pink {
+    color: #ff14aa;
+}
+
+.color-red {
+    color: red;
+}
+
+.font-size-3 {
+    font-size: 3rem;
+}
+
+div.color-pink {
+    color: rgb(179, 77, 0);
+}
+
+span {
+    color: red;
+}
+
+#minun-id {
+    background-color: #570b64;
+}
+
+div {}
+p {}
+
+.class {}
+.orange-text {}
+.red-text {}
+
+#id {}
+
+
+
+
+.minun-luokka:nth-child(2):not(.div3:nth-of-type(even)) {
+    color: red;
+}
+
