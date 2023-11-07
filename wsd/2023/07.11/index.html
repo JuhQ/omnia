@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meidän oma otsikko</title>
+
+    <script src="editor.js"></script>
+
+    <style id="custom-style"></style>
+
+</head>
+
+<body>
+
+    <form class="hidden-print" action="/form.php" method="post">
+        <textarea name="html"></textarea>
+
+        <textarea name="css"></textarea>
+
+        <hr />
+
+        <input type="text" name="phone-number1" />
+        <input type="text" name="phone-number2" />
+        <input type="text" name="phone-number3" />
+        <input type="text" name="phone-number4" />
+
+        <hr>
+        <button type="submit">Submit form</button>
+        <button type="button" class="print-button">Tulosta</button>
+        <button type="reset">Resetoi</button>
+        <button type="button" class="reset-form">Reset button</button>
+        <hr>
+        <input type="button" value="Tulosta" />
+        <input type="reset" value="Resetoi" />
+    </form>
+
+    <div class="html-content"></div>
+
+</body>
+
+</html>
