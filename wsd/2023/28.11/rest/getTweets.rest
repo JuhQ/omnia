@@ -1,0 +1,15 @@
+
+### Get tweets
+GET http://localhost:3000/api/tweets
+
+
+### Get tweets
+GET http://localhost:3000/api/tweets?query=params
+
+
+### Get tweets
+GET http://localhost:3000/api/tweets/7
+
+
+### Get tweets
+GET http://localhost:3000/api/tweets/2
