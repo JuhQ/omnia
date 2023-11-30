@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= it.title %>
+    </title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.min.css">
+    <script src="/static/script.js"></script>
+
+    <style>
+        #container {
+            margin: 0 auto;
+            width: 50%;
+        }
+
+        .individual-tweet {
+            border: 1px solid rgb(214, 157, 255);
+            border-radius: 4px;
+            padding: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .individual-tweet span {
+            margin-right: 1rem;
+        }
+
+        .individual-tweet div {
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="container">
+
+        <div id="form-container"></div>
+        <div id="tweets"></div>
+
+    </div>
+
+    <ul>
+        <% it.rows.forEach((row)=> { %>
+            <li><%= row.name %></li>
+        <% }) %>
+    </ul>
+
+    <template id="form">
+        <form>
+            <textarea></textarea>
+            <button type="submit">Lähetä twiitti!</button>
+        </form>
+    </template>
+
+    <template id="twiitti">
+        <div class="individual-tweet">
+            <img src="http://placekitten.com/200/300" alt="Kissakuva" />
+            <span class="name"></span>
+            <span class="date"></span>
+            <div class="tweet-content"></div>
+        </div>
+    </template>
+</body>
+
+</html>

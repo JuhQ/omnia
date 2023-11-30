@@ -1,0 +1,1 @@
+INSERT INTO phone_numbers (name_id, number) VALUES (1, '000-123456789');
