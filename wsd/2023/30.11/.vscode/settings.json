@@ -1,0 +1,16 @@
+{
+    "editor.rulers": [80, 120],
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "localhost",
+            "group": "localhost",
+            "database": "database",
+            "username": "username",
+            "password": "password"
+        }
+    ]
+}
