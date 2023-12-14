@@ -1,0 +1,48 @@
+
+### Get tweets
+GET http://localhost:3000/api/tweets
+
+
+### Get tweets
+GET http://localhost:3000/api/tweets?query=params
+
+
+### Get tweets
+GET http://localhost:3000/api/tweets/7
+
+
+### Get tweets
+GET http://localhost:3000/api/tweets/2
+
+
+### Post tweet with javascript and /api path
+POST http://localhost:3000/api/tweet
+Content-Type: text/plain;charset=UTF-8
+
+{
+    "message":"twiitin lähetys. Teimme tämän rest pluginin kautta"
+}
+
+
+### Post tweet with javascript and /api path, pitäisi tulla error objekti
+POST http://localhost:3000/api/tweet
+Content-Type: text/plain;charset=UTF-8
+
+{
+    "message":""
+}
+
+
+### Post tweet selaimella, ei käytetä javaskriptin käyttämää rajapintaa
+POST http://localhost:3000/add-tweet
+Content-Type: application/x-www-form-urlencoded
+
+message=twiitin sisältö lomakkeen kautta lähetettynä.
+
+
+### Post tweet selaimella, pitäisi tulla error redirect
+POST http://localhost:3000/add-tweet
+Content-Type: application/x-www-form-urlencoded
+
+message=
+

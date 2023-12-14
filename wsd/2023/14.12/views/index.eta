@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= it.title %>
+    </title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.min.css">
+
+    <script src="/static/script.js"></script>
+
+    <style>
+        #container {
+            margin: 0 auto;
+            width: 50%;
+        }
+
+        .individual-tweet {
+            border: 1px solid rgb(214, 157, 255);
+            border-radius: 4px;
+            padding: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .individual-tweet span {
+            margin-right: 1rem;
+        }
+
+        .individual-tweet div {
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="container">
+        <h1>Omnitter</h1>
+        <% if(!it.isAuthenticated) { %>
+            <form method="post" action="/signup" id="signup-form">
+                <h2>Sign up</h2>
+                <input type="text" name="username" placeholder="Username" />
+                <input type="password" name="password" placeholder="Password" />
+                <button type="submit">Sign up</button>
+            </form>
+
+            <form method="post" action="/authentication" id="authentication-form">
+                <h2>Login</h2>
+                <input type="text" name="username" placeholder="Username" />
+                <input type="password" name="password" placeholder="Password" />
+                <button type="submit">Login</button>
+            </form>
+        <% } %>
+
+        
+        <% if(it.isAuthenticated) { %>
+            Cookie: <%= it.writeTimes %><br />
+            Session: <%= it.writeTimesInSession %>
+
+            <form method="post" action="/add-tweet" id="tweet-form">
+                <textarea name="message"></textarea>
+                <button type="submit">Lähetä twiitti!</button>
+            </form>
+        <% } %>
+
+        <div id="tweets">
+            <% it.tweets.forEach((row) => { %>
+                <div class="individual-tweet">
+                    <img src="<%= row.img %>" alt="Kissakuva" />
+                    <span class="name"><%= row.sender %></span>
+                    <span class="date"><%= new Date(row.date).toLocaleString('fi-FI', { timeZone: 'Europe/Helsinki' }) %></span>
+                    <div class="tweet-content"><%= row.message %></div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+
+    <template id="twiitti">
+        <div class="individual-tweet">
+            <img src="http://placekitten.com/200/300" alt="Kissakuva" />
+            <span class="name"></span>
+            <span class="date"></span>
+            <div class="tweet-content"></div>
+        </div>
+    </template>
+</body>
+
+</html>
